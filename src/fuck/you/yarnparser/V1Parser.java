@@ -13,6 +13,7 @@ import java.util.List;
 
 public class V1Parser
 {
+    // protip: instead of using java's List and ArrayList use fastutil's ObjectList and ObjectArrayList
     private List< ClassEntry > classes;
     private List< MethodEntry > methods;
     private List< FieldEntry > fields;
@@ -141,15 +142,15 @@ public class V1Parser
             switch( findtype )
             {
                 case OFFICIAL:
-                    if( entry.official.equalsIgnoreCase( name ) )
+                    if( entry.official.equals( name ) )
                         return entry;
                     break;
                 case INTERMEDIARY:
-                    if( entry.intermediary.equalsIgnoreCase( name ) )
+                    if( entry.intermediary.equals( name ) )
                         return entry;
                     break;
                 case NAMED:
-                    if( entry.named.equalsIgnoreCase( name ) )
+                    if( entry.named.equals( name ) )
                         return entry;
                     break;
             }
